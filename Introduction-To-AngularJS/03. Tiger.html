@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="api">
+<head>
+	<meta charset="UTF-8">
+	<title>Student Info Page</title>
+</head>
+<body>
+	<script src="../libs/angular.js"></script>
+	
+
+
+	<script type="text/javascript">
+		var app = angular.module('api', []);
+
+		app.controller('Tiger', function($scope) {
+			$scope.tiger = {
+				'Name': 'Pesho',
+				'Born': 'Asia',
+				'BirthDate': 2006,
+				'Live': 'Sofia Zoo'
+			}
+		})
+	</script>
+</body>
+</html>

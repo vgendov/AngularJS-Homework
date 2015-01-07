@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="api">
+<head>
+	<meta charset="UTF-8">
+	<title>Student Info Page</title>
+</head>
+<body ng-controller="StudentInfo" ng-style="studentStyle">
+	
+	<strong>Name: </strong> <span ng-style="colorStyle"> {{ student.name }} </span> <br>
+	<strong>Photo: </strong> <img ng-src="{{student.photo}}"> <br>
+	<strong>Grade: </strong> <span ng-style="colorStyle"> {{ student.grade }} </span> <br>
+	<strong>School: </strong> <span ng-style="colorStyle"> {{ student.school }} </span> <br>
+	<strong>Teacher: </strong> <span ng-style="colorStyle"> {{ student.teacher }} </span>
+	
+	<script src="../libs/angular.js"></script>
+
+	<script type="text/javascript">
+		var app = angular.module('api', []);
+
+		app.controller('StudentInfo', function($scope) {
+			$scope.student = {
+				"name": "Pesho",
+				"photo": "http://www.nakov.com/wp-content/uploads/2014/05/SoftUni-Logo.png",
+				"grade": 5,
+				"school": "High School of Mathematics",
+				"teacher": "Gichka Pesheva"
+			};
+
+			$scope.studentStyle = {
+				fontSize: '25px'
+			}
+			$scope.colorStyle = {
+				color: 'orange'
+			}
+		});
+	</script>
+
+</body>
+</html>

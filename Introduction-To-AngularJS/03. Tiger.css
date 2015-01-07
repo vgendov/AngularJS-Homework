@@ -1,0 +1,15 @@
+body {
+	background: grey;
+}
+
+#wrapper > div{
+	float: left;
+}
+
+#info {
+	width: 150px;
+}
+
+#image {
+	width: 200px;
+}

@@ -3,12 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Student Info Page</title>
+	<link rel="stylesheet" type="text/css" href="03. Tiger.css">
 </head>
-<body>
+<body ng-controller="Tiger">
 	<script src="../libs/angular.js"></script>
 	
+	<div id="wrapper">
+		<div id="info">
+			<h1>TIGER</h1>
 
+			<strong>Name: </strong> <span> {{ tiger.Name }} </span> <br>
+			<strong>Born: </strong> <span> {{ tiger.Born }} </span> <br>
+			<strong>Birth date: </strong> <span> {{ tiger.BirthDate }} </span> <br>
+			<strong>Live: </strong> <span> {{ tiger.Live }} </span> <br>
+		</div>
 
+		<div id="image">
+			<img ng-src="{{tiger.Photo}}" width="100%">
+		</div>
+	</div>
 	<script type="text/javascript">
 		var app = angular.module('api', []);
 
@@ -17,7 +30,8 @@
 				'Name': 'Pesho',
 				'Born': 'Asia',
 				'BirthDate': 2006,
-				'Live': 'Sofia Zoo'
+				'Live': 'Sofia Zoo',
+				'Photo': 'http://tigerday.org/wp-content/uploads/2013/04/tiger.jpg'
 			}
 		})
 	</script>

@@ -14,7 +14,7 @@ app.controller('Main', function($scope, $sce) {
 			damage: '380',
 			cooldown: '10s'
 		}]
-	}
+	};
 
 	var secondChar = {
 		name: 'Brom',
@@ -29,7 +29,7 @@ app.controller('Main', function($scope, $sce) {
 			damage: '100',
 			cooldown: '5s'
 		}]
-	}
+	};
 
 	data.push(firstChar);
 	data.push(secondChar);
@@ -39,4 +39,12 @@ app.controller('Main', function($scope, $sce) {
 		return $sce.trustAsResourceUrl(url);
 	}
 
-})
+	var sortFunc = function(predicate) {
+		return function(item) {
+			if(predicate == ''){
+
+			}
+		}
+	}
+
+});

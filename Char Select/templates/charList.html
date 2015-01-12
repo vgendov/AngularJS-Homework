@@ -1,7 +1,22 @@
-<ul ng-show="!$parent.show">
+<ul>
 	<li ng-repeat="(index, char) in data">
 		<div class="image">
-			<img src="{{ makeUrl(char.pictureUrl) }}">
+			<img ng-src="{{ makeUrl(char.pictureUrl) }}" />
+		</div>
+		<div class="info">
+			<ul>
+				<li>Name: {{ char.name }}</li>
+				<li>Class: {{ char.type }}</li>
+			</ul>
+		</div>
+		<div class="skills">
+			<div ng-repeat="(key, skill) in char.skills">
+				<ul>
+					<li>Name: {{ skill.name }}</li>
+					<li>Damage: {{ skill.damage }}</li>
+					<li>Cooldown: {{ skill.cooldown }}</li>
+				</ul>
+			</div>
 		</div>
 	</li>
 </ul>

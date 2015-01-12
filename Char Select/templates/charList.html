@@ -1,0 +1,7 @@
+<ul ng-show="!$parent.show">
+	<li ng-repeat="(index, char) in data">
+		<div class="image">
+			<img src="{{ makeUrl(char.pictureUrl) }}">
+		</div>
+	</li>
+</ul>

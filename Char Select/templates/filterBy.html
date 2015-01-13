@@ -2,18 +2,35 @@
     <li>
         <div class="filter-choice">
             <label>Sort by:</label>
-            <select>
+            <select ng-model="$parent.sort">
                 <option style="display:none" value="">Select order...</option>
                 <option value="name">Name</option>
                 <option value="type">Class</option>
+                <option value="style">Fighting Style</option>
             </select>
         </div>
+
         <div class="filter-choice">
             <label>Filter by:</label>
             <select ng-model="filterChoice">
                 <option style="display:none" value="">Select filter...</option>
-                <option value="name">Name</option>
                 <option value="type">Class</option>
+                <option value="style">Fighting Style</option>
+            </select>
+        </div>
+
+        <div class="form-group" ng-show="filterChoice == 'type'">
+            <label for="subs-filter">Select class...</label>
+            <select class="form-control" ng-model="$parent.classFilter">
+                <option style="display:none" value="">Your choice...</option>
+                <option value="{{type}}" ng-repeat="type in classes">{{type}}</option>
+            </select>
+        </div>
+        <div class="form-group" ng-show="filterChoice == 'style'">
+            <label for="subs-filter">Select a fighting style...</label>
+            <select class="form-control" id="subs-filter" ng-model="$parent.styleFilter">
+                <option style="display:none" value="">Your choice...</option>
+                <option value="{{style}}" ng-repeat="style in styles">{{style}}</option>
             </select>
         </div>
     </li>

@@ -1,5 +1,5 @@
 <ul>
-	<li ng-repeat="(index, char) in data">
+	<li ng-repeat="(index, char) in data | orderBy:sortFunc($parent.sort) | filter: $parent.classFilter | filter: $parent.styleFilter">
 		<div class="image">
 			<img ng-src="{{ makeUrl(char.pictureUrl) }}" />
 		</div>
@@ -7,14 +7,15 @@
 			<ul>
 				<li>Name: {{ char.name }}</li>
 				<li>Class: {{ char.type }}</li>
+				<li>Fighting Style: {{ char.style }}</li>
 			</ul>
 		</div>
 		<div class="skills">
 			<div ng-repeat="(key, skill) in char.skills">
 				<ul>
-					<li>Name: {{ skill.name }}</li>
-					<li>Damage: {{ skill.damage }}</li>
-					<li>Cooldown: {{ skill.cooldown }}</li>
+					<li>Skill Name: {{ skill.name }}</li>
+					<li>Skill Effect: {{ skill.effect }}</li>
+					<li>Skill Cooldown: {{ skill.cooldown }}</li>
 				</ul>
 			</div>
 		</div>
